@@ -12,7 +12,7 @@
         justify-content: center;
         .profile-image {
             border-radius: 50%;
-            border: 1px solid #000000;
+            border: 1px solid $pink;
             height: 200px;
             width: 200px;
             margin: 0 auto -100px auto;
@@ -25,4 +25,11 @@
 .profile-video {
     height: auto;
     width: 100%;
+}
+
+.profile-watch {
+    border: 2px solid $pink;
+    background: $pink;
+    color: #fff;
+    cursor: pointer;
 }
