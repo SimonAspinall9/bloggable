@@ -1,0 +1,46 @@
+@import '_variables';
+@mixin transition($in) {
+    transition: $in;
+    -webkit-transition: $in;
+    -moz-transition: $in;
+    -o-transition: $in;
+    -ms-transition: $in;
+}
+
+.button-profile-watch {
+    outline: none;
+    border: none;
+    display: block;
+    background-color: transparent;
+    position: relative;
+    border: 2px solid $green;
+    @include transition(all 0.5s ease);
+}
+
+.button-animation-slide-right {
+    overflow: hidden;
+    span {
+        color: $green;
+        display: inline-block;
+        @include transition(all 0.3s ease);
+    }
+    .icon {
+        position: absolute;
+        left: -60px;
+        top: 0;
+        color: #fff;
+        padding: 0 20px;
+        background-color: $green;
+        @include transition(all 0.3s ease);
+    }
+    &:hover {
+        border: 2px solid $green;
+        .icon {
+            left: 0px;
+        }
+        span {
+            color: $green;
+            margin-left: 50px;
+        }
+    }
+}

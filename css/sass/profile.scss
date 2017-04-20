@@ -1,35 +1,50 @@
-@import '_variables';
-.profile-header-wrapper {
-    min-height: 200px;
-    max-height: 300px;
-    height: 100%;
-    margin-bottom: 125px;
-    .profile-header {
+    @import '_variables';
+    .profile-header-wrapper {
+        min-height: 200px;
+        max-height: 300px;
         height: 100%;
-        width: 100%;
-        background: $green;
-        display: flex;
-        justify-content: center;
-        .profile-image {
-            border-radius: 50%;
-            border: 1px solid $pink;
-            height: 200px;
-            width: 200px;
-            margin: 0 auto -100px auto;
-            background: $pink;
-            align-self: flex-end;
+        margin-bottom: 125px;
+        .profile-header {
+            height: 100%;
+            width: 100%;
+            background: $green;
+            display: flex;
+            justify-content: center;
+            .profile-image {
+                border-radius: 50%;
+                border: 1px solid $pink;
+                height: 200px;
+                width: 200px;
+                margin: 0 auto -100px auto;
+                background: $pink;
+                align-self: flex-end;
+            }
         }
     }
-}
-
-.profile-video {
-    height: auto;
-    width: 100%;
-}
-
-.profile-watch {
-    border: 2px solid $pink;
-    background: $pink;
-    color: #fff;
-    cursor: pointer;
-}
+    
+    .profile-video {
+        height: auto;
+        width: 100%;
+    }
+    
+    .profile-watch {
+        border: 2px solid $pink;
+        background: $pink;
+        color: #fff;
+        cursor: pointer;
+        &:hover {
+            color: #fff;
+            border: 2px solid $pink;
+        }
+    }
+    
+    .profile-badge {
+        border: 2px solid $pink;
+        color: #000;
+        cursor: default;
+        text-align: center;
+        height: 38px;
+        span {
+            line-height: 38px;
+        }
+    }
