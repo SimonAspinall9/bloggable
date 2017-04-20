@@ -41,10 +41,15 @@
     .profile-badge {
         border: 2px solid $pink;
         color: #000;
-        cursor: default;
-        text-align: center;
-        height: 38px;
-        span {
-            line-height: 38px;
+        &:hover,
+        &:focus {
+            border: 2px solid $pink;
         }
+    }
+    
+    .profile-divider {
+        width: 100%;
+        height: 2px;
+        background: $pink;
+        margin: 10px 0;
     }
