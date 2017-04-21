@@ -1,16 +1,21 @@
-html,
-body {
-    height: 100%;
-}
-
-main {
-    height: 100%;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.pull-right {
-    float: right;
+.flex-aligner {
+    display: flex;
+    &.flex-right {
+        justify-content: flex-end;
+    }
+    &.flex-center-horizontal {
+        justify-content: center;
+    }
+    &.flex-left {
+        justify-content: flex-start;
+    }
+    &.flex-top {
+        align-items: flex-start;
+    }
+    &.flex-center-vertical {
+        align-items: center;
+    }
+    &.flex-bottom {
+        align-items: flex-end;
+    }
 }
