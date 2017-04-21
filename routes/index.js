@@ -17,8 +17,12 @@ routes.get('/skeleton', (req, res) => {
     res.render('pages/skeleton-demo')
 })
 
-routes.get('/profile', (req, res) => {
-    res.render('pages/profile')
+routes.get('/:username', (req, res, next) => {
+    var username = req.params.username
+    if (username == 'SimonAspinall')
+        return res.render('pages/profile')
+
+    next()
 })
 
 routes.get('*', (req, res) => {
