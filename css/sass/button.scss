@@ -7,7 +7,7 @@
         -ms-transition: $in;
     }
     
-    .button-profile-watch {
+    .button-profile-info {
         outline: none;
         border: none;
         display: block;
@@ -42,6 +42,26 @@
             span {
                 color: $green;
                 margin-left: 50px;
+            }
+        }
+    }
+    
+    .button-animation-slide-down {
+        overflow: hidden;
+        color: #fff;
+        .layer {
+            color: #fff;
+            position: absolute;
+            top: -70px;
+            width: 100%;
+            left: 0;
+            padding: 0;
+            background-color: $green;
+            @include transition(all 0.3s ease);
+        }
+        &:hover {
+            .layer {
+                top: 0;
             }
         }
     }
