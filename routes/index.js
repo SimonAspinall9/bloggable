@@ -1,6 +1,11 @@
 var express = require('express')
-var users = require('../DAL/users')
+var bodyParser = require('body-parser')
+var passwordHash = require('password-hash')
+var userService = require('../Services/user')
+var profileService = require('../Services/profile')
 var routes = express.Router()
+
+routes.use(bodyParser.json())
 
 routes.get('/favicon.ico', () => {})
 
@@ -8,39 +13,23 @@ routes.get('/', (req, res) => {
     res.render('pages/index')
 })
 
-routes.get('/about', (req, res) => {
-    res.render('pages/about')
+routes.get('/login', (req, res) => {
+    res.render('pages/login')
 })
 
-routes.get('/mypage', (req, res) => {
-    res.render('pages/mypage')
-})
+routes.post('/login', (req, res) => {
 
-routes.get('/skeleton', (req, res) => {
-    res.render('pages/skeleton-demo')
+
+    res.send('logged in')
 })
 
 routes.get('/:username', (req, res, next) => {
-    var username = req.params.username
-
-    users.findByUsername(username, (err, user) => {
-        if (err) throw err
-
-        console.log(user)
-
-        if (username == 'SimonAspinall_9')
-            return res.render('pages/profile')
+    profileService.getProfileDataByUsername(req.params.username, (user) => {
+        if (user)
+            return res.render('pages/profile', { user: user })
 
         next()
     })
-})
-
-routes.get('/users/:lastname', (req, res, next) => {
-    var lastname = req.params.lastname
-
-    console.log('lastname')
-
-    users.findBySurname(lastname)
 })
 
 routes.get('*', (req, res) => {
